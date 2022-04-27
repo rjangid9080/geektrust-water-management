@@ -1,9 +1,5 @@
 let consumptionOfWater;
 let costOfAllotedWater;
-let costOfWaterByGuests;
-let totalWaterConsumed;
-let totalCostOfConsumedWater;
-let totalGuests = 0;
 
 let allotmentOfWater = (typeOfApartment, corporationWater, borewellWater) => {
   let peopleInApartment;
@@ -22,15 +18,15 @@ let allotmentOfWater = (typeOfApartment, corporationWater, borewellWater) => {
 };
 
 let addGuest = (guests) => {
+  let totalGuests = 0;
   totalGuests += guests;
   waterConsumptionByGuests = totalGuests * 10 * 30;
-};
-
-let totalWaterQuantity = () => {
-  totalWaterConsumed = consumptionOfWater + waterConsumptionByGuests;
+  return totalGuests;
 };
 
 let costOfTankerWater = () => {
+  let costOfWaterByGuests;
+
   if (0 <= waterConsumptionByGuests <= 500) {
     costOfWaterByGuests = waterConsumptionByGuests * 2;
   }
@@ -45,10 +41,16 @@ let costOfTankerWater = () => {
     costOfWaterByGuests =
       500 * 2 + 1000 * 3 + 1500 * 5(waterConsumptionByGuests - 3000) * 8;
   }
+  return costOfWaterByGuests;
 };
 
-let totalCostOfWater = () => {
+let totalBill = () => {
+  let totalWaterConsumed;
+  let totalCostOfConsumedWater;
+
+  totalWaterConsumed = consumptionOfWater + waterConsumptionByGuests;
   totalCostOfConsumedWater = Math.ceil(
     costOfAllotedWater + costOfWaterByGuests
   );
+  return `${totalWaterConsumed} ${totalCostOfConsumedWater}`;
 };

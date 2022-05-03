@@ -3,22 +3,20 @@ const fs = require("fs");
 let costOfAllotedWater;
 let totalGuests = 0;
 let waterConsumptionByGuests = 0;
-let consumptionOfWater=0;
-let costOfWaterByGuests;
+let consumptionOfWater = 0;
+let costOfWaterByGuests = 0;
 
 let allotmentOfWater = (typeOfApartment, corporationWater, borewellWater) => {
   let peopleInApartment;
   if (typeOfApartment === 2) {
     peopleInApartment = 3;
-    consumptionOfWater = peopleInApartment  * 10 * 30;
-    console.log(consumptionOfWater)
+    consumptionOfWater = peopleInApartment * 10 * 30;
   } else if (typeOfApartment === 3) {
     peopleInApartment = 5;
     consumptionOfWater = peopleInApartment * 10 * 30;
   } else {
     return console.log("Only 2 BHK and 3 BHK are available");
   }
-  console.log(consumptionOfWater);
   costOfAllotedWater =
     (consumptionOfWater / (corporationWater + borewellWater)) *
     (corporationWater * 1 + borewellWater * 1.5);
@@ -30,13 +28,13 @@ let addGuest = (guests) => {
 };
 
 let costOfTankerWater = () => {
-  if (0 <= waterConsumptionByGuests <= 500) {
+  if ( waterConsumptionByGuests>0) {
     costOfWaterByGuests = waterConsumptionByGuests * 2;
   }
-  if (501 <= waterConsumptionByGuests <= 1500) {
+  if ( waterConsumptionByGuests >=501) {
     costOfWaterByGuests = 500 * 2 + (waterConsumptionByGuests - 500) * 3;
   }
-  if (1501 <= waterConsumptionByGuests <= 3000) {
+  if ( waterConsumptionByGuests >=1501) {
     costOfWaterByGuests =
       500 * 2 + 1000 * 3 + (waterConsumptionByGuests - 1500) * 5;
   }
@@ -65,7 +63,6 @@ const input = data.split("\n").join("").split("\r");
 
 for (let i = 0; i < input.length; i++) {
   let type = input[i].split(" ");
-  console.log(type);
   if (type[0] === "ALLOT_WATER") {
     let apartment = parseInt(type[1]);
     let waterRatio = type[2].split(":");

@@ -19,20 +19,21 @@ Costs
 •. 1501 to 3000L - Rs. 5 per litre
 •. 3001L+ - Rs. 8 per litre
 
-##Input Commands
-###ALLOT_WATER <apartment-type> <ratio>
+## Input Commands
+### ALLOT_WATER <apartment-type> <ratio>
 Allots the water from corporation and borewell based on the apartment type and ratio passed. Here the ratio is always of the format Corporation Water : Borewell Water. This command will be executed only once a month per house and also at the start of the input command set.
 Example- ALLOT_WATER 3 1:5
-###ADD_GUESTS <no_of_guests>
+
+### ADD_GUESTS <no_of_guests>
 Adds the number of guests to a house. ADD_GUESTS command can be given multiple times in a month and total guests is the sum of all ADD_GUESTS numbers for that month.
 Example - ADD_GUESTS 10
-###BILL
+### BILL
 Prints the total water consumed in litres and the total cost, after cumulatively adding up all the guests cost to the bill. This command will be executed only once and at the end of the input set.
 It should print the total water consumption and the cost in the format
-####<TOTAL_WATER_CONSUMED_IN_LITERS> <TOTAL_COST>
+#### <TOTAL_WATER_CONSUMED_IN_LITERS> <TOTAL_COST>
 Example - BILL
 4500 13625
-##Assumptions
+## Assumptions
 1. All the calculations are done for a single apartment in a month. Number of days in the month is assumed to be 30.
 2. The water consumption is measured in litres.
 3. All calculations should be rounded off to the nearest integer. No decimal values are used.

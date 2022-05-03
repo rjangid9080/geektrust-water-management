@@ -41,3 +41,20 @@ Example - BILL
 5. Guests can be added a multiple number of times.
 6. The command BILL can be executed only once, which is at the end of the month. It should be a part of the input set.
 
+## Developing
+This repo uses [pnpm](https://pnpm.io/) , to install it ...
+```
+npm install -g pnpm 
+```
+...then install dependencies
+```
+pnpm install
+```
+to run Geektrust_Water_Management on your local using `pnpm start`
+
+## Inputs
+If you want to add input , then you have to add input4.txt , input5.txt ,...inputN.txt and so file in the inputs folder of this repo,
+And to run that input 
+![Screenshot 2022-05-03 195711](https://user-images.githubusercontent.com/43642227/166472706-2ad6332d-bb92-47ed-8c7b-e7b5a799b26f.png)
+
+Change file name in the according to the above screenshot.
